@@ -23,12 +23,13 @@ sed -i 's/\//-/g' GwasCatalog.bed
 
 awk -F"\t" '{print $12"\t"$13"\t"$13"\t"$15"\t"$8}' header | cat - GwasCatalog.bed > tmp && mv tmp GwasCatalog.bed
 
+mkdir parsed_files
+
 awk -F'\t' '
     FNR == 1 { header = $0;next }
-    !seen[$5]++ { print header > ("GWASCatalogPhenotype_"$5".txt") }
+    !seen[$5]++ { print header > ("parsed_files/GWASCatalogPhenotype_"$5".txt") }
     {
-        print > ("GWASCatalogPhenotype_"$5".txt");
+        print > ("parsed_files/GWASCatalogPhenotype_"$5".txt");
     }
 ' GwasCatalog.bed
-
 rm header
