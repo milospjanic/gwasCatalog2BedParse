@@ -16,16 +16,6 @@ Files that will be generated are:
 There are **1107** parsed output files
 
 <pre>
-GWASCatalogPhenotype_5-HTT brain serotonin transporter levels.txt
-GWASCatalogPhenotype_Abdominal aortic aneurysm.txt
-GWASCatalogPhenotype_Acenocoumarol maintenance dosage.txt
-GWASCatalogPhenotype_Acne (severe).txt
-GWASCatalogPhenotype_Activated partial thromboplastin time.txt
-GWASCatalogPhenotype_Acute lymphoblastic leukemia (B-cell precursor).txt
-GWASCatalogPhenotype_Acute lymphoblastic leukemia (childhood).txt
-GWASCatalogPhenotype_Acute urticaria and angioedema (non-steroidal anti-inflammatory drug-induced).txt
-GWASCatalogPhenotype_Addiction.txt
-GWASCatalogPhenotype_Adiponectin levels.txt
 mpjanic@zoran:~/temp3/parsed_files$ ls -1 * | head -n50
 GWASCatalogPhenotype_5-HTT brain serotonin transporter levels.txt
 GWASCatalogPhenotype_Abdominal aortic aneurysm.txt
