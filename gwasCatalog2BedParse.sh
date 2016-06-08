@@ -30,3 +30,5 @@ awk -F'\t' '
         print > ("GWASCatalogPhenotype_"$5".txt");
     }
 ' GwasCatalog.bed
+
+rm header
