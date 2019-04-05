@@ -18,11 +18,15 @@ mv tmp GwasCatalog.bed
 #./GwasCatalog2Bed.sh
 
 #adding CardiogramPlusC4D to GWASCatalog
+
+wget https://stanfordmedicine.box.com/shared/static/pqxkuzwgv8bhl8ne05a3ohlmzgwbir28.bed
+mv pqxkuzwgv8bhl8ne05a3ohlmzgwbir28.bed CARDIOGRAMplusC4DleadSNPs.bed
+
 awk -F"\t" '{print $1"\t"$2"\t"$3"\t"$4"\t","CardiogramPlusC4D"}' CARDIOGRAMplusC4DleadSNPs.bed  > CARDIOGRAMC4Dplusnovel.txt.tmp
 sed -i 's/^chr//g' CARDIOGRAMC4Dplusnovel.txt.tmp
 cat CARDIOGRAMC4Dplusnovel.txt.tmp >> GwasCatalog.bed
 rm CARDIOGRAMC4Dplusnovel.txt.tmp
-#sed -i 's/\//-/g' GwasCatalog.bed 
+sed -i 's/\//-/g' GwasCatalog.bed 
 
 awk -F"\t" '{print $1"\t"$2"\t"$3"\t"$4"\t"$5}' header | cat - GwasCatalog.bed > tmp && mv tmp GwasCatalog.bed
 
