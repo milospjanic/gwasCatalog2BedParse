@@ -1,21 +1,17 @@
 #!/bin/bash
 #download gwas catalog and create bed file with chr;position;position+1;proxy_gene;phenotype
-echo "
 #download gwas catalog 
-
 wget https://www.dropbox.com/s/305f4dsbpkdtw3c/full.mod.crossmap.plus.snpsnpinteract.header
 mv full.mod.crossmap.plus.snpsnpinteract.header GwasCatalog.bed
 
-
+echo "
 head -n1 GwasCatalog.bed> header 
 tail -n +2 GwasCatalog.bed > tmp
 mv tmp GwasCatalog.bed
 
-#awk -F\"\t\" '{if (\$12!=\"\") print \$12\"\t\"\$13\"\t\"\$15\"\t\"\$8}' gwascatalog.txt > tmp
-#awk -F\"\t\" '{print \$1\"\t\"\$2\"\t\"\$2+1\"\t\"\$3\"\t\"\$4}' tmp > GwasCatalog.bed
-#rm tmp" > GwasCatalog2Bed.sh
-#chmod 775 GwasCatalog2Bed.sh
-#./GwasCatalog2Bed.sh
+" > GwasCatalog2Bed.sh
+chmod 775 GwasCatalog2Bed.sh
+./GwasCatalog2Bed.sh
 
 #adding CardiogramPlusC4D to GWASCatalog
 
